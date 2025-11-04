@@ -5,4 +5,4 @@ Implementação de Lista, Pilha e Fila em Java.
 
 Clique no link abaixo para ver os arquivos:
 
-* **[Exercicio_5](./Exercicio_5)**
+* **[Principal](./Principal)**
