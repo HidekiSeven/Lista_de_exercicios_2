@@ -1,0 +1,78 @@
+import java.util.Scanner;
+
+public class Principal {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        Lista minhaLista = new Lista();
+        Pilha minhaPilha = new Pilha();
+        Fila minhaFila = new Fila();
+
+        int opcao = -1;
+        int valor;
+
+        do {
+            System.out.println("\n--- MENU DE ESTRUTURA DE DADOS (Simples) ---");
+            System.out.println("--- LISTA ---");
+            System.out.println("1. Inserir na Lista");
+            System.out.println("2. Mostrar Lista");
+            System.out.println("--- PILHA ---");
+            System.out.println("3. Empilhar (Push)");
+            System.out.println("4. Desempilhar (Pop)");
+            System.out.println("5. Mostrar Pilha");
+            System.out.println("--- FILA ---");
+            System.out.println("6. Enfileirar (Enqueue)");
+            System.out.println("7. Desenfileirar (Dequeue)");
+            System.out.println("8. Mostrar Fila");
+            System.out.println("---------------------------------");
+            System.out.println("0. Sair");
+            System.out.print("Escolha uma opção: ");
+
+            opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    System.out.print("Digite o valor para INSERIR na LISTA: ");
+                    valor = scanner.nextInt();
+                    minhaLista.inserir(valor);
+                    break;
+                case 2:
+                    minhaLista.mostrar();
+                    break;
+                case 3:
+                    System.out.print("Digite o valor para EMPILHAR: ");
+                    valor = scanner.nextInt();
+                    minhaPilha.empilhar(valor);
+                    break;
+                case 4:
+                    minhaPilha.desempilhar();
+                    break;
+                case 5:
+                    minhaPilha.mostrar();
+                    break;
+                case 6:
+                    System.out.print("Digite o valor para ENFILEIRAR: ");
+                    valor = scanner.nextInt();
+                    minhaFila.enfileirar(valor);
+                    break;
+                case 7:
+                    minhaFila.desenfileirar();
+                    break;
+                case 8:
+                    minhaFila.mostrar();
+                    break;
+                case 0:
+                    System.out.println("Programa encerrado.");
+                    break;
+                default:
+                    System.out.println("Opção inválida! Tente novamente.");
+                    break;
+            }
+
+        } while (opcao != 0);
+
+        scanner.close();
+    }
+}

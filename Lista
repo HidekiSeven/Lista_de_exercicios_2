@@ -1,0 +1,37 @@
+public class Lista {
+
+    private static final int CAPACIDADE = 5;
+
+    private int[] vetor;
+
+    private int tamanho;
+
+    public Lista() {
+        this.vetor = new int[CAPACIDADE];
+        this.tamanho = 0;
+    }
+
+    public void inserir(int valor) {
+        if (this.tamanho < CAPACIDADE) {
+
+            this.vetor[this.tamanho] = valor;
+            this.tamanho++;
+            System.out.println("Valor " + valor + " inserido na lista.");
+        } else {
+            System.out.println("Erro: A lista está cheia!");
+        }
+    }
+
+    public void mostrar() {
+        if (this.tamanho == 0) {
+            System.out.println("A lista está vazia.");
+        } else {
+            System.out.print("Estado da Lista: [ ");
+
+            for (int i = 0; i < this.tamanho; i++) {
+                System.out.print(this.vetor[i] + " ");
+            }
+            System.out.println("]");
+        }
+    }
+}

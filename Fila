@@ -1,0 +1,65 @@
+public class Fila {
+    private static final int CAPACIDADE = 5;
+    private int[] vetor;
+
+    private int inicio;
+
+    private int fim;
+
+    private int tamanho;
+
+    public Fila() {
+        this.vetor = new int[CAPACIDADE];
+        this.inicio = 0;
+        this.fim = 0;
+        this.tamanho = 0;
+    }
+
+    public void enfileirar(int valor) {
+
+        if (this.tamanho < CAPACIDADE) {
+
+            this.vetor[this.fim] = valor;
+
+            this.fim = (this.fim + 1) % CAPACIDADE;
+
+            this.tamanho++;
+            System.out.println("Valor " + valor + " enfileirado.");
+        } else {
+            System.out.println("Erro: A fila está cheia! Não é possível enfileirar.");
+        }
+    }
+
+    public void desenfileirar() {
+
+        if (this.tamanho > 0) {
+
+            int valorRemovido = this.vetor[this.inicio];
+
+            this.inicio = (this.inicio + 1) % CAPACIDADE;
+
+            this.tamanho--;
+            System.out.println("Valor " + valorRemovido + " desenfileirado.");
+        } else {
+            System.out.println("Erro: A fila está vazia! Não é possível desenfileirar.");
+        }
+    }
+
+    // Exercício 4
+    public void mostrar() {
+        if (this.tamanho == 0) {
+            System.out.println("A fila está vazia.");
+        } else {
+            System.out.print("Estado da Fila (Início -> Fim): [ ");
+
+            int i = this.inicio;
+
+            for (int count = 0; count < this.tamanho; count++) {
+                System.out.print(this.vetor[i] + " ");
+
+                i = (i + 1) % CAPACIDADE;
+            }
+            System.out.println("]");
+        }
+    }
+}

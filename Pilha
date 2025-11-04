@@ -1,0 +1,44 @@
+public class Pilha {
+    private static final int CAPACIDADE = 5;
+    private int[] vetor;
+    private int tamanho;
+
+    public Pilha() {
+        this.vetor = new int[CAPACIDADE];
+        this.tamanho = 0;
+    }
+
+    public void empilhar(int valor) {
+        if (this.tamanho < CAPACIDADE) {
+
+            this.vetor[this.tamanho] = valor;
+            this.tamanho++;
+            System.out.println("Valor " + valor + " empilhado.");
+        } else {
+            System.out.println("Erro: A pilha está cheia!");
+        }
+    }
+
+    public void desempilhar() {
+        if (this.tamanho > 0) {
+
+            this.tamanho--;
+            int valorRemovido = this.vetor[this.tamanho];
+            System.out.println("Valor " + valorRemovido + " desempilhado.");
+        } else {
+            System.out.println("Erro: A pilha está vazia!");
+        }
+    }
+
+    public void mostrar() {
+        if (this.tamanho == 0) {
+            System.out.println("A pilha está vazia.");
+        } else {
+            System.out.println("Estado da Pilha (Topo -> Base):");
+
+            for (int i = this.tamanho - 1; i >= 0; i--) {
+                System.out.println(this.vetor[i]);
+            }
+        }
+    }
+}
